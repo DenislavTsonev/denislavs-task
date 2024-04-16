@@ -1,0 +1,6 @@
+# Big files
+.zip
+
+# Terraform files
+terrform.tfstate*
+.terrform*
