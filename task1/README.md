@@ -25,3 +25,8 @@ Maybe is good to configure IAM authentication for the user not using the user/pa
 ## The lambda function
 I'm using a code from the module (slightly modified) in order to not have all the resources in the task deployed via public modules. Also, I think the public module is too complicated.
 I've added a RDS read only policy to the role attached to the lambda (not sure what Telemetry analyzer means, maybe is just quering the DB as SQL queries or maybe is RDS AWS api calls).
+
+## Terraform state
+I didn't configure any remote state storage, because I was not sure about the technology, that's why I'm using local state (Usually or I have most experience with S3 backend, but also Gitlab as state storage).
+
+- Here is one interesting article for terraform state - https://blog.plerion.com/hacking-terraform-state-privilege-escalation/ 

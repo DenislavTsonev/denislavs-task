@@ -1,4 +1,6 @@
 data "aws_availability_zones" "available" {}
+data "aws_partition" "current" {}
+
 
 data "aws_secretsmanager_secret" "this" {
   name = "denislavs-tasks"

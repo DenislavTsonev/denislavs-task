@@ -12,7 +12,7 @@ module "app_runner_code_base" {
       code_configuration = {
         configuration_source = "REPOSITORY"
       }
-      repository_url   = "https://github.com/DenislavTsonev/denislavs-tasks"
+      repository_url   = "https://github.com/DenislavTsonev/denislavs-task"
       source_directory = "task1/app/"
       source_code_version = {
         type  = "BRANCH"
