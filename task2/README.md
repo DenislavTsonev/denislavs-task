@@ -2,10 +2,10 @@
 
 There are a few types of Gitlab runner executors, but based on the task description I would look at two particular executors:
 
-- Shell executor, because I think this is the best candidate for the job. So, basically we need to do the following:
+- Shell executor, because I think this is the best candidate for the job. So, basically, we need to do the following:
     1. Install the Runner Agent - https://docs.gitlab.com/runner/install/
     2. To register that runner - `sudo gitlab-runner register`
-    3. Then configure that runner - in `/etc/gitlab-runner/` (most probably, depends on how runner is executed as root or not) folder we should create a file called `config.toml` with the following:
+    3. Then configure that runner - in `/etc/gitlab-runner/` (most probably, depending on how the runner is executed as root or not) folder we should create a file called `config.toml` with the following:
         ```bash
         [[runners]]
             name = "HW test runner"
@@ -31,8 +31,8 @@ There are a few types of Gitlab runner executors, but based on the task descript
                 - <path to the file that we want to store data>
         ```
 
-- Docker executor, because I think this is also good candidate for the job. So, basically we need to do the following:
-    1. The only differences with the above config is that `config.toml` file, and that we most probably have to add the serial devices in that config `devices = ["/dev/ttys001", "/dev/ttys002"...]` and of course change the executor type:
+- Docker executor, because I think this is also a good candidate for the job. So, basically, we need to do the following:
+    1. The only differences with the above config are that `config.toml` file, and that we most probably have to add the serial devices in that config `devices = ["/dev/ttys001", "/dev/ttys002"...]` and of course change the executor type:
     ```bash
     [[runners]]
     name = "HW test runner"
@@ -77,6 +77,4 @@ run_container:
       - /tmp/my_data/serial_data.log
 ```
 
-
-
-> All of the code examples above are pseudo code examples, except the python script that I've tested on my machine with emulated serail port and it seems working :). I've spend some time to get this working - https://docs.gitlab.com/charts/development/kind/ but I spend a lot of time debugging some deployment issues with that chart and decided to not going in that direction, because of the limited time.
+> All of the code examples above are pseudo-code examples, except the Python script that I've tested on my machine with an emulated serial port and it seems working :). I've spent some time to get this working - https://docs.gitlab.com/charts/development/kind/ but I spent a lot of time debugging some deployment issues with that chart and decided to not go in that direction, because of the limited time.
